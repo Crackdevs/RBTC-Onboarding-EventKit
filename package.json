@@ -1,6 +1,7 @@
 {
   "name": "rbtc-onboarding-eventkit",
   "private": true,
+  "license": "MIT",
   "workspaces": [
     "packages/*",
     "examples/*"
