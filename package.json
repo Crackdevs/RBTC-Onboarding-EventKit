@@ -1,0 +1,20 @@
+{
+  "name": "rbtc-onboarding-eventkit",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run -ws build",
+    "dev": "npm run -ws dev",
+    "lint": "npm run -ws lint",
+    "typecheck": "npm run -ws typecheck",
+    "test": "npm run -ws test"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/express": "^4.17.21"
+  }
+}
+

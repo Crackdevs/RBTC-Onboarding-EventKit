@@ -1,0 +1,14 @@
+node_modules
+dist
+.turbo
+.cache
+coverage
+
+.env
+.env.*
+!.env.example
+
+.DS_Store
+DeveloperRequirementList.md
+PRD.md
+RBTC_EventKit_PRD.docx

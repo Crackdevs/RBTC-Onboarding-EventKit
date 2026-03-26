@@ -1,0 +1,28 @@
+{
+  "name": "@rbtc-eventkit/example-exchange-processor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/server.cjs",
+  "module": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx watch src/server.ts",
+    "lint": "npm run typecheck",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@rbtc-eventkit/sdk": "file:../../packages/sdk",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
+
