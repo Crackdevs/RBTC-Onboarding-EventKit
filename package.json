@@ -1,6 +1,7 @@
 {
   "name": "rbtc-onboarding-eventkit",
   "private": true,
+  "version": "0.1.0",
   "license": "MIT",
   "workspaces": [
     "packages/*",
@@ -10,6 +11,7 @@
     "build": "npm run -ws build",
     "dev": "npm run -ws dev",
     "lint": "npm run -ws lint",
+    "release": "./scripts/release.js",
     "typecheck": "npm run -ws typecheck",
     "test": "npm run -ws test"
   },

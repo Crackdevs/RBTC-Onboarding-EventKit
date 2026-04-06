@@ -1,9 +1,10 @@
 {
   "name": "@rbtc-eventkit/webhook-worker",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "type": "module",
+  "files": ["dist"],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,7 +23,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@rbtc-eventkit/sdk": "file:../sdk",
+    "@rbtc-eventkit/sdk": "^0.1.0",
     "better-sqlite3": "^11.3.0"
   },
   "devDependencies": {
