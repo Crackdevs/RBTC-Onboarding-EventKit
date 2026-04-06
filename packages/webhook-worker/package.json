@@ -23,7 +23,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@rbtc-eventkit/sdk": "^0.1.0",
+    "@rbtc-eventkit/sdk": "file:../sdk",
     "better-sqlite3": "^11.3.0"
   },
   "devDependencies": {
