@@ -12,3 +12,7 @@ coverage
 DeveloperRequirementList.md
 PRD.md
 RBTC_EventKit_PRD.docx
+examples/webhook-worker-runner/data/rbtc-eventkit.sqlite
+examples/webhook-worker-runner/data/rbtc-eventkit.sqlite-wal
+examples/webhook-worker-runner/data/rbtc-eventkit.sqlite-shm
+examples/wallet-backend/data/wallet-backend.json

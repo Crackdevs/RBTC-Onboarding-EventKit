@@ -12,8 +12,7 @@
     "url": "https://github.com/Crackdevs/RBTC-Onboarding-EventKit/issues"
   },
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "npm run -ws build",

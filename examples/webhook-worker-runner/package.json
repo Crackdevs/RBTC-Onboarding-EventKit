@@ -1,0 +1,14 @@
+{
+  "name": "@rbtc-eventkit/example-webhook-worker-runner",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Runs @rbtc-eventkit/webhook-worker against env (poll backend → deliver signed webhooks).",
+  "scripts": {
+    "start": "node --env-file=.env ./node_modules/@rbtc-eventkit/webhook-worker/dist/index.js"
+  },
+  "dependencies": {
+    "@rbtc-eventkit/webhook-worker": "^0.1.1"
+  }
+}
