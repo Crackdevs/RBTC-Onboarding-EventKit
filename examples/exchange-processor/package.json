@@ -15,7 +15,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@rbtc-eventkit/sdk": "^0.2.1",
+    "@rbtc-eventkit/sdk": "file:../../packages/sdk",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   },

@@ -5,7 +5,10 @@
     "outDir": "dist",
     "rootDir": "../..",
     "types": ["node", "vitest/globals"],
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@rbtc-eventkit/sdk": ["../../packages/sdk/src/index.ts"]
+    }
   },
   "include": ["src"]
 }
