@@ -1,6 +1,6 @@
 {
   "name": "@rbtc-eventkit/webhook-worker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "license": "MIT",
   "repository": {
@@ -13,7 +13,10 @@
     "url": "https://github.com/Crackdevs/RBTC-Onboarding-EventKit/issues"
   },
   "type": "module",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -42,4 +45,3 @@
     "vitest": "^2.0.5"
   }
 }
-
