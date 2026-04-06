@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.1.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Crackdevs/RBTC-Onboarding-EventKit.git"
+  },
+  "homepage": "https://github.com/Crackdevs/RBTC-Onboarding-EventKit#readme",
+  "bugs": {
+    "url": "https://github.com/Crackdevs/RBTC-Onboarding-EventKit/issues"
+  },
   "workspaces": [
     "packages/*",
     "examples/*"
