@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "userAddress": "0x1111111111111111111111111111111111111111",
+      "txHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "providerHash": "prov-1",
+      "fromTokenName": "BTC",
+      "fromNetworkName": "Bitcoin",
+      "toTokenName": "RBTC",
+      "toNetworkName": "Rootstock",
+      "fromAmount": "1",
+      "toAmount": "1",
+      "date": "2026-01-15T12:00:00.000Z",
+      "sdkProvider": "POWPEG"
+    }
+  ],
+  "total": 1,
+  "page": 1,
+  "totalPages": 1
+}

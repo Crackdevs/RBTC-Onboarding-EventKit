@@ -1,6 +1,18 @@
 export type LogLevel = "debug" | "info" | "warn" | "error";
 
+export type BackendAdapterKind = "generic" | "twoWp";
+
 export interface WorkerEnv {
+  backendAdapter: BackendAdapterKind;
+  /** When set and `backendAdapter` is `twoWp`, used as the 2wp-api base URL instead of `backendBaseUrl`. */
+  twoWpBaseUrl?: string;
+  /** Required when `backendAdapter` is `twoWp` (RSK or BTC address for `GET /tx-history`). */
+  twoWpTrackedAddress: string;
+  /** `GET /tx-history` page (default 1). */
+  twoWpHistoryPage: number;
+  /** Parallel `GET /tx-status` requests per poll (default 4). */
+  twoWpStatusConcurrency: number;
+
   backendBaseUrl: string;
   backendDepositsPath: string;
   pollIntervalMs: number;
@@ -36,8 +48,31 @@ function parseNumber(name: string, value: string, fallback?: number): number {
   throw new Error(`Invalid number in env var ${name}: ${value}`);
 }
 
+function parseBackendAdapter(raw: string | undefined): BackendAdapterKind {
+  const v = (raw ?? "generic").trim().toLowerCase();
+  if (v === "generic" || v === "") return "generic";
+  if (v === "twowp" || v === "two_wp" || v === "two-wp" || v === "2wp") return "twoWp";
+  throw new Error(
+    `Invalid BACKEND_ADAPTER: ${raw}. Expected "generic" or "twoWp" (aliases: two_wp, 2wp).`
+  );
+}
+
 export function loadWorkerEnv(): WorkerEnv {
-  const backendBaseUrl = requireEnv("BACKEND_BASE_URL");
+  const backendAdapter = parseBackendAdapter(process.env.BACKEND_ADAPTER);
+
+  const twoWpBaseUrl = process.env.TWO_WP_BASE_URL?.trim() || undefined;
+  const backendBaseUrl =
+    backendAdapter === "twoWp" && twoWpBaseUrl
+      ? twoWpBaseUrl
+      : requireEnv("BACKEND_BASE_URL");
+
+  const twoWpTrackedAddress = process.env.TWO_WP_TRACKED_ADDRESS?.trim() ?? "";
+  if (backendAdapter === "twoWp") {
+    if (!twoWpTrackedAddress) {
+      throw new Error("Missing TWO_WP_TRACKED_ADDRESS (required when BACKEND_ADAPTER=twoWp)");
+    }
+  }
+
   const backendDepositsPath = process.env.BACKEND_DEPOSITS_PATH ?? "/deposits";
 
   const pollIntervalMs = parseNumber(
@@ -78,7 +113,23 @@ export function loadWorkerEnv(): WorkerEnv {
     throw new Error(`Invalid LOG_LEVEL: ${logLevel}`);
   }
 
+  const twoWpHistoryPage = parseNumber(
+    "TWO_WP_HISTORY_PAGE",
+    process.env.TWO_WP_HISTORY_PAGE ?? "1",
+    1
+  );
+  const twoWpStatusConcurrency = parseNumber(
+    "TWO_WP_STATUS_CONCURRENCY",
+    process.env.TWO_WP_STATUS_CONCURRENCY ?? "4",
+    4
+  );
+
   return {
+    backendAdapter,
+    twoWpBaseUrl,
+    twoWpTrackedAddress,
+    twoWpHistoryPage,
+    twoWpStatusConcurrency,
     backendBaseUrl,
     backendDepositsPath,
     pollIntervalMs,

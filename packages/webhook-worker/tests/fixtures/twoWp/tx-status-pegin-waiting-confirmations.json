@@ -1,0 +1,18 @@
+{
+  "type": "PEGIN",
+  "txDetails": {
+    "btc": {
+      "txId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "creationDate": "2026-01-15T11:00:00.000Z",
+      "confirmations": 3,
+      "requiredConfirmation": 6,
+      "fees": 0,
+      "amountTransferred": 100000000
+    },
+    "rsk": {
+      "confirmations": 0,
+      "recipientAddress": "0x1111111111111111111111111111111111111111"
+    },
+    "status": "WAITING_CONFIRMATIONS"
+  }
+}

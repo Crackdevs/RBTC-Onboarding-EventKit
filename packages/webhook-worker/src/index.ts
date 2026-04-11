@@ -1,4 +1,5 @@
 import { loadWorkerEnv } from "./config.js";
+import { createBackendAdapter } from "./createBackendAdapter.js";
 import { createStateStore } from "./state/createStateStore.js";
 import { startWorker } from "./worker.js";
 
@@ -11,7 +12,7 @@ async function main() {
     onError: (msg) => console.error(msg),
   });
 
-  await startWorker({ env, store });
+  await startWorker({ env, store, backendAdapter: createBackendAdapter(env) });
 }
 
 main().catch((err) => {

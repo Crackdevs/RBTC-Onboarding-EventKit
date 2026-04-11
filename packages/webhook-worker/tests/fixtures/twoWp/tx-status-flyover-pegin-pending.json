@@ -1,0 +1,15 @@
+{
+  "type": "FLYOVER_PEGIN",
+  "txDetails": {
+    "txHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "type": "pegin",
+    "date": "2026-01-17T09:00:00.000Z",
+    "amount": "1",
+    "fee": "0.0001",
+    "blockToBeFinished": 0,
+    "senderAddress": "tb1qexample",
+    "recipientAddress": "0x3333333333333333333333333333333333333333",
+    "quoteHash": "qh",
+    "status": "PENDING"
+  }
+}
